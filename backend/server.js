@@ -1,8 +1,11 @@
 const { errorMonitor } = require("events");
 const express = require("express");
+const colors = require("colors");
 const dotenv = require("dotenv").config();
-const {errorHandler} = require("../backend/middleware/errorMiddlewear");
+const { errorHandler } = require("../backend/middleware/errorMiddlewear");
+const connectDB = require("../backend/config/db");
 const port = process.env.PORT || 5000;
+connectDB();
 
 const app = express();
 
